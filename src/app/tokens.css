@@ -1,0 +1,179 @@
+/*
+ * Relay Design System — Minty Glass & High-Contrast Obsidian Tokens
+ */
+:root {
+  /* Nexora Green Design System — Light Theme */
+  --nexora-bg: #F7FBF2;
+  --nexora-surface: #FFFFFF;
+  --nexora-accent: #39FF14;
+  --nexora-accent-2: #D4FF00;
+  --nexora-accent-gradient: linear-gradient(135deg, #39FF14 0%, #D4FF00 100%);
+  --nexora-text: #10241A;
+  --nexora-muted: #5C6F63;
+  --nexora-border: #DCEBD4;
+  --nexora-risk-critical: #E4483C;
+  --nexora-risk-medium: #E2A93B;
+  --nexora-risk-low: #2E9E5B;
+
+  /* Color — High-Fidelity Light Mode */
+  --color-brand: #227C44;
+  --color-brand-accent: #2E9E5B;
+  --color-success: #2E9E5B;
+  --color-danger: #E4483C;
+  --color-bg-gradient-start: #F7FBF2;
+  --color-bg-gradient-end: #EBF5E6;
+  --color-surface: #FFFFFF;
+  --color-surface-alt: #F2F8EE;
+  --color-sidebar-bg: #101712;
+  --color-sidebar-text: #8E9690;
+  --color-sidebar-text-active: #FFFFFF;
+  --color-text-primary: #10241A;
+  --color-text-secondary: #5C6F63;
+  --color-border: #DCEBD4;
+  --color-on-accent: #10241A;
+  --color-focus-ring: 0 0 0 3px rgba(57, 255, 20, 0.35);
+
+  /* Glass & Atmosphere — Light Theme */
+  --glass-bg: rgba(223, 243, 231, 0.75);
+  --glass-border: rgba(35, 110, 60, 0.22);
+  --glass-blur: 24px;
+  --glow-brand: 0 10px 32px rgba(34, 124, 68, 0.16);
+  --orb-1: rgba(40, 142, 79, 0.18);
+  --orb-2: rgba(25, 95, 50, 0.12);
+  --grid-line: rgba(20, 75, 45, 0.22);
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 28px;
+  --radius-3xl: 34px;
+  --radius-pill: 9999px;
+
+  /* High-Contrast Aesthetic Shadows — Multi-layered Elevation */
+  --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-sm: 0 4px 14px -2px rgba(0, 0, 0, 0.10), 0 2px 6px -1px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 14px 36px -4px rgba(0, 0, 0, 0.14), 0 6px 14px -2px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 24px 54px -6px rgba(0, 0, 0, 0.20), 0 10px 24px -3px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 36px 72px -10px rgba(0, 0, 0, 0.28), 0 16px 36px -4px rgba(0, 0, 0, 0.16);
+
+  /* Typography */
+  --font-family: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+  --text-xs: 13px;
+  --text-sm: 14px;
+  --text-base: 15px;
+  --text-md: 17px;
+  --text-lg: 24px;
+  --text-xl: 34px;
+}
+
+.dark {
+  /* Nexora Green Design System — Dark Theme */
+  --nexora-bg: #0A0F0C;
+  --nexora-surface: #101712;
+  --nexora-accent: #00FF66;
+  --nexora-accent-2: #0F5C2E;
+  --nexora-accent-gradient: linear-gradient(135deg, #00FF66 0%, #0F5C2E 100%);
+  --nexora-text: #E7FBEF;
+  --nexora-muted: #7FB894;
+  --nexora-border: #1C3A27;
+  --nexora-risk-critical: #FF5A4E;
+  --nexora-risk-medium: #F2B33D;
+  --nexora-risk-low: #3FD97A;
+
+  --color-brand: #0F5C2E;
+  --color-brand-accent: #00FF66;
+  --color-success: #3FD97A;
+  --color-danger: #FF5A4E;
+  --color-bg-gradient-start: #0A0F0C;
+  --color-bg-gradient-end: #101712;
+  --color-surface: #101712;
+  --color-surface-alt: #162019;
+  --color-sidebar-bg: #0A0F0C;
+  --color-sidebar-text: #7FB894;
+  --color-sidebar-text-active: #E7FBEF;
+  --color-text-primary: #E7FBEF;
+  --color-text-secondary: #7FB894;
+  --color-border: #1C3A27;
+  --color-on-accent: #0A0F0C;
+  --color-focus-ring: 0 0 0 3px rgba(0, 255, 102, 0.35);
+
+  /* Glass & Atmosphere — Dark Theme */
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.09);
+  --glass-blur: 20px;
+  --glow-brand: 0 0 32px rgba(76, 175, 107, 0.14);
+  --orb-1: rgba(76, 175, 107, 0.12);
+  --orb-2: rgba(46, 125, 79, 0.08);
+  --grid-line: rgba(255, 255, 255, 0.12);
+
+  /* Deep Aesthetic Dark Shadows */
+  --shadow-xs: 0 2px 6px rgba(0, 0, 0, 0.50);
+  --shadow-sm: 0 6px 20px -2px rgba(0, 0, 0, 0.70), 0 2px 8px -1px rgba(0, 0, 0, 0.50);
+  --shadow-md: 0 18px 44px -4px rgba(0, 0, 0, 0.88), 0 8px 18px -2px rgba(0, 0, 0, 0.65);
+  --shadow-lg: 0 28px 64px -6px rgba(0, 0, 0, 0.95), 0 12px 28px -3px rgba(0, 0, 0, 0.80);
+  --shadow-xl: 0 40px 90px -10px rgba(0, 0, 0, 1.0), 0 18px 40px -4px rgba(0, 0, 0, 0.90);
+}
+
+/* ==========================================================================
+   RELAY DESIGN SYSTEM CORE COMPONENTS
+   ========================================================================== */
+
+/* 1. Glassmorphic Card Panel */
+.card-glass {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border-radius: var(--radius-2xl);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.20), var(--shadow-md);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-glass:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-brand-accent);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), var(--shadow-lg), var(--glow-brand);
+}
+
+/* 2. Active Inset Highlight Ring (Prevents Scrollbar Collision) */
+.card-glass.active {
+  border-color: var(--color-brand-accent) !important;
+  background: color-mix(in srgb, var(--color-brand-accent) 14%, var(--glass-bg)) !important;
+  box-shadow: inset 0 0 0 1.5px var(--color-brand-accent), var(--shadow-md), var(--glow-brand) !important;
+}
+
+/* 3. Primary Pill CTA Button */
+.btn-primary {
+  background: var(--color-brand-accent);
+  color: #FFFFFF;
+  font-family: var(--font-family);
+  font-weight: 650;
+  font-size: 14px;
+  letter-spacing: -0.2px;
+  padding: 10px 22px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: var(--glow-brand);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+}

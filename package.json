@@ -1,0 +1,43 @@
+{
+  "name": "nexora",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "test": "node scripts/test-runner.mjs"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "@react-oauth/google": "^0.13.5",
+    "@supabase/supabase-js": "^2.109.0",
+    "@types/canvas-confetti": "^1.9.0",
+    "@types/pdf-parse": "^1.1.5",
+    "canvas-confetti": "^1.9.4",
+    "clsx": "^2.1.1",
+    "jwt-decode": "^4.0.0",
+    "lucide-react": "^1.31.0",
+    "mammoth": "^1.13.0",
+    "neo4j-driver": "^6.2.0",
+    "next": "16.3.1",
+    "pdf-parse": "^2.4.5",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "recharts": "^3.10.1",
+    "tailwind-merge": "^3.6.0",
+    "vosk-browser": "^0.0.8",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.1",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
