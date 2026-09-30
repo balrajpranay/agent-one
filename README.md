@@ -360,16 +360,50 @@ docker compose up -d
 
 ---
 
-## 👥 Team & Contributions
+## 👥 Team & Contribution
 
-This project was built for the hackathon by our multidisciplinary engineering team. Responsibilities were divided across key architectural domains:
+This project was developed collaboratively by our engineering team, with distinct, well-defined responsibilities distributed across the entire system architecture to ensure a balanced, modular, and production-ready implementation:
 
-| Team Member | Roll Number | Primary Role & Core Contributions |
-| :--- | :---: | :--- |
-| **B. Pranay Kumar** | **24QM1A6608** | **Lead AI Systems Architect & Backend Engineering**<br />• Architected the isolated Gemini Model Context Protocol (MCP) server with strict prompt boundary guards.<br />• Engineered the Google Gemini 2.0 Flash / Pro multimodal integration and token optimization pipeline.<br />• Designed the hybrid retrieval engine combining Neo4j Aura GraphRAG with Qdrant vector embeddings.<br />• Implemented core Next.js API routes (`/api/analyze`, `/api/chat`, `/api/compare`, `/api/activity`). |
-| **A. Sai Athej Reddy** | **24QM1A6602** | **Frontend Architecture & UI/UX Design System Lead**<br />• Led the complete Agent One brand redesign with an obsidian (`#090a0f`) and electric emerald (`#00FF85`) design system.<br />• Developed the interactive split-pane document viewer with real-time coordinate bounding box overlays.<br />• Built the interactive GraphRAG knowledge graph visualizer with force-directed physics and node inspection.<br />• Ensured complete responsive design, dark/light mode parity, keyboard shortcuts, and command palette navigation. |
-| **B. Manikanta** | **24QM1A6614** | **Document Processing & Contextual Prompt Intelligence**<br />• Built the multi-format ingestion pipeline supporting PDF (`pdf-parse`), Word (`mammoth`), Markdown, PNG, JPEG, Excel, and CSV.<br />• Engineered the autonomous semantic intent engine that detects required capabilities while keeping underlying classification hidden.<br />• Designed the dynamic contextual prompt synthesis system that surfaces only relevant templates and document actions.<br />• Developed the cross-document semantic comparison algorithm detecting clause changes and quantitative value shifts. |
-| **B. Bharath** | **24QM1A6626** | **System Architecture, Quality Assurance & Deployment**<br />• Built the automated 4-tier production verification suite (`test-runner.mjs` and universal pipeline test scripts).<br />• Configured multi-stage Docker containerization (`Dockerfile` & `docker-compose.yml`) for production readiness.<br />• Implemented Supabase authentication, database schema migrations, and secure session management.<br />• Led technical documentation, benchmarking reports, and deployment reliability audits. |
+### 📋 Member Overview & Responsibility Matrix
+
+| Team Member | Roll Number | Core Domain | Key Technical Deliverables |
+| :--- | :---: | :--- | :--- |
+| **B. Pranay Kumar** | **24QM1A6608** | **Backend Architecture & AI Integration** | Google Gemini 2.0 integration, MCP Server protocol, Neo4j GraphRAG, Hybrid Vector Search, and Core Next.js API Routes. |
+| **A. Sai Athej Reddy** | **24QM1A6602** | **Frontend Architecture & UI/UX Engineering** | Dual-theme Graph Intelligence landing page, modern authentication UI, split-view document canvas, and responsive design systems across mobile & desktop. |
+| **B. Manikanta** | **24QM1A6614** | **Universal Document Ingestion & Prompt Intelligence** | Multi-format file ingestion (PDF, DOCX, XLSX, Images), 10-category semantic classifier, autonomous skill routing, and tailored prompt suggestion decks. |
+| **B. Bharath** | **24QM1A6626** | **Quality Assurance, DevOps & Deployment** | Automated multi-tenant test suites, Next.js production build optimization, multi-stage Docker & Vercel deployment pipeline, and technical documentation. |
+
+---
+
+### 🔍 Detailed Division of Responsibilities
+
+#### 1. B. Pranay Kumar — *Backend Architecture & AI Integration*
+* **Roll No:** `24QM1A6608`
+* **Isolated Gemini MCP Server**: Designed and built the Model Context Protocol (MCP) server architecture (`mcp/gemini-server`) with strict security boundary isolation between system instructions, specialized skills, user context, and document data.
+* **Multimodal AI Reasoning Engine**: Integrated Google Gemini 2.0 Flash and Pro models for deep cross-modal reasoning, structured table extraction, and token-efficient summarization.
+* **Hybrid GraphRAG & Vector Retrieval**: Implemented the hybrid retrieval engine combining Neo4j Aura knowledge graph traversals, Leiden community clustering, and Qdrant/local cosine vector embeddings.
+* **Enterprise API Infrastructure**: Authored and optimized high-throughput Next.js server routes including `/api/analyze`, `/api/chat`, `/api/compare`, and `/api/activity`.
+
+#### 2. A. Sai Athej Reddy — *Frontend Architecture & UI/UX Engineering*
+* **Roll No:** `24QM1A6602`
+* **Dual-Theme Graph Intelligence Design**: Created the unified Neo4j-inspired landing page architecture with seamless, synchronized switching between White Theme and Dark Theme (`themeContext.tsx`).
+* **Modern Authentication Experience**: Built the interactive login and signup modal with real Google OAuth 2.0 authentication, email/password workflows, and an animated HTML5 dot-matrix canvas backdrop.
+* **Mobile & Desktop Responsive Layouts**: Refactored the entire UI grid systems, fluid typography, touch backdrops, and navigation drawers to deliver a pixel-perfect experience across mobile (<475px), tablet, laptop, and ultrawide viewports.
+* **Interactive Document Canvas**: Engineered the dual-pane PDF and document viewer with real-time spatial bounding-box illumination and interactive entity relationship graph visualizers.
+
+#### 3. B. Manikanta — *Universal Document Ingestion & Prompt Intelligence*
+* **Roll No:** `24QM1A6614`
+* **Multi-Format Ingestion Pipeline**: Developed parser modules for diverse file types including PDFs (`pdf-parse`), Word documents (`mammoth`), Markdown files, Excel spreadsheets (`.xlsx`/`.csv`), and scanned image OCR.
+* **10-Category Semantic Intent Classifier**: Engineered the rule-based and LLM-assisted document classification engine covering Business Reports, Legal Agreements, Bank Statements, Insurance Policies, Research Papers, and Regulatory Filings without generic prompt bloat.
+* **Context-Tailored Prompt Synthesis**: Created the dynamic prompt recommendation deck and pre-engineered audit lenses that surface only contextually relevant actions based on the audited document's domain.
+* **Semantic Document Comparator**: Developed the cross-document semantic comparison algorithm that detects added/removed clauses, structural shifts, and quantitative variance across contract revisions.
+
+#### 4. B. Bharath — *Quality Assurance, DevOps & Deployment*
+* **Roll No:** `24QM1A6626`
+* **Automated Verification Harness**: Authored the comprehensive multi-tier test harness (`test-runner.mjs`) covering configuration checks, multi-tenant user data isolation (10/10 tests), document intelligence, and demo document lookups.
+* **Production Build Optimization**: Tuned Next.js 16.3 Turbopack build configurations, tree-shaking, route optimization, and eliminated zero runtime warnings or compilation errors.
+* **DevOps & Containerization**: Configured the production multi-stage `Dockerfile`, `docker-compose.yml`, and `vercel.json` deployment rules for seamless zero-downtime hosting.
+* **Technical Documentation & Governance**: Authored exhaustive developer guides, API specifications, and architecture decision records ensuring full institutional maintainability.
 
 ---
 
