@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Agent One — Technical Stack Documentation</title>
+<style>
+  @page { size: A4; margin: 15mm 18mm; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #1e293b;
+    line-height: 1.55;
+    font-size: 10pt;
+    padding: 10px;
+  }
+  h1 { font-size: 20pt; color: #0f172a; border-bottom: 2px solid #059669; padding-bottom: 8px; margin-bottom: 12px; }
+  h2 { font-size: 13pt; color: #0f172a; border-bottom: 1px solid #e2e8f0; padding-bottom: 5px; margin-top: 20px; margin-bottom: 8px; }
+  h3 { font-size: 11pt; color: #059669; margin-top: 14px; margin-bottom: 6px; }
+  p { margin-bottom: 8px; }
+  blockquote { border-left: 3.5px solid #059669; background: #f8fafc; padding: 6px 12px; color: #475569; margin: 10px 0; font-size: 9.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0 16px 0; font-size: 8.5pt; page-break-inside: avoid; }
+  th, td { border: 1px solid #cbd5e1; padding: 6px 9px; text-align: left; }
+  th { background: #f1f5f9; color: #0f172a; font-weight: 700; }
+  tr:nth-child(even) { background: #fafafa; }
+  code { background: #f1f5f9; color: #0f172a; padding: 2px 5px; border-radius: 4px; font-family: monospace; font-size: 8.5pt; }
+  a { color: #059669; text-decoration: none; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e2e8f0; margin: 18px 0; }
+</style>
+</head>
+<body>
+<h1>🛠️ Agent One — Technical Stack Documentation</h1>
+<blockquote><strong>Comprehensive Architecture, Framework, Model, and Infrastructure Reference</strong>  </blockquote>
+<blockquote><em>Version: 2.0.0 | Production Release</em>  </blockquote>
+<blockquote><em>Live Deployment: <a href="https://agent-one-rosy.vercel.app/">https://agent-one-rosy.vercel.app/</a></em>  </blockquote>
+<blockquote><em>Repository: <a href="https://github.com/balrajpranay/agent-one">https://github.com/balrajpranay/agent-one</a></em></blockquote>
+<hr />
+<h2>📌 Executive Summary</h2>
+<p>Agent One is an autonomous multimodal document intelligence workspace engineered to unify heterogeneous document ingestion, silent semantic domain routing, pixel-accurate spatial evidence grounding, and hybrid GraphRAG retrieval into a cohesive, high-performance platform.</p>
+<p>This document serves as the <strong>authoritative technical documentation</strong> of all languages, frameworks, AI models, vector stores, graph engines, protocols, and infrastructure powering the system.</p>
+<hr />
+<h2>🏗️ Architectural Topology</h2>
+<p>``<code>mermaid</p>
+<p>flowchart TD</p>
+<p>subgraph ClientLayer["🖥️ Frontend & Workspace HUD"]</p>
+<p>NextApp["Next.js 16 (App Router + RSC)"]</p>
+<p>ReactUI["React 19 + Tailwind CSS v4"]</p>
+<p>Viewer["Dual-Pane Spatial Bounding-Box Viewer"]</p>
+<p>GraphViz["Force-Directed SVG Graph Visualizer"]</p>
+<p>Theme["Dual-Theme Engine (Obsidian Dark / Clean White)"]</p>
+<p>end</p>
+<p>subgraph IngestionLayer["📂 Universal Ingestion Engine"]</p>
+<p>PDF["pdf-parse (PDF AST & Coordinates)"]</p>
+<p>DOCX["mammoth (Word DOCX AST)"]</p>
+<p>MD["Markdown AST Parser"]</p>
+<p>Sheets["Tabular Parser (XLSX / CSV)"]</p>
+<p>OCR["Gemini 2.0 Multimodal OCR"]</p>
+<p>end</p>
+<p>subgraph MCPLayer["🛡️ Isolated Gemini MCP Server (mcp/gemini-server)"]</p>
+<p>Guard["Boundary Enforcement Tag Isolation"]</p>
+<p>ZodVal["Zod 4.6.5 Runtime Schema Validation"]</p>
+<p>MCPTools["6 Specialized MCP Analysis Tools"]</p>
+<p>end</p>
+<p>subgraph AIModelLayer["🧠 AI Reasoning & Foundation Models"]</p>
+<p>GeminiFlash["Google Gemini 2.0 Flash (Primary)"]</p>
+<p>GeminiPro["Google Gemini 2.0 Pro (Complex Reasoning)"]</p>
+<p>Classifier["10-Category Semantic Intent Router"]</p>
+<p>FallbackCascade["Multi-Model Auto-Failover Cascade"]</p>
+<p>end</p>
+<p>subgraph DataRetrievalLayer["💾 Dual-Retrieval & Knowledge Layer"]</p>
+<p>Neo4j["Neo4j Aura Cloud (GraphRAG + Leiden Clustering)"]</p>
+<p>Qdrant["Qdrant Cloud (384-dim Dense Vector Search)"]</p>
+<p>Supabase["Supabase (PostgreSQL + Cloud Storage + Auth)"]</p>
+<p>MemFallback["In-Memory Graph & Cosine Store (100% Offline Resilience)"]</p>
+<p>end</p>
+<p>subgraph DevOpsLayer["🚀 Infrastructure & CI/CD"]</p>
+<p>Vercel["Vercel Edge Global CDN"]</p>
+<p>Docker["Multi-Stage Production Dockerfile"]</p>
+<p>GitHub["GitHub Webhooks Automated CI/CD"]</p>
+<p>end</p>
+<p>ClientLayer --> IngestionLayer</p>
+<p>IngestionLayer --> MCPLayer</p>
+<p>MCPLayer --> AIModelLayer</p>
+<p>AIModelLayer --> DataRetrievalLayer</p>
+<p>DataRetrievalLayer --> ClientLayer</p>
+<p>DevOpsLayer -.-> ClientLayer</p>
+<p></code>`<code></p>
+<hr />
+<h2>🔬 Detailed Layer-by-Layer Breakdown</h2>
+<h3>1. Frontend & Client HUD Architecture</h3>
+<p>The client tier is built on the bleeding edge of the React ecosystem, optimized for sub-100ms render speeds and instant visual feedback.</p>
+<table><thead><tr><th>Component</th><th>Technology</th><th>Version</th><th>Architectural Role</th></tr></thead><tbody><tr><td><strong>Framework</strong></td><td><strong>Next.js (App Router)</strong></td><td></code>16.3.1<code></td><td>Turbopack engine, React Server Components (RSC), optimized Edge routes, and streaming responses.</td></tr><tr><td><strong>UI Library</strong></td><td><strong>React</strong></td><td></code>19.2.8<code></td><td>Concurrent rendering, reactive UI state machines, and synchronized dual-pane inspection.</td></tr><tr><td><strong>Static Typing</strong></td><td><strong>TypeScript</strong></td><td></code>^5.0<code></td><td>Strict end-to-end type safety, generic schema enforcement, and zero </code>any<code> tolerance.</td></tr><tr><td><strong>Styling & Design Tokens</strong></td><td><strong>Tailwind CSS</strong></td><td></code>v4.0<code></td><td>Custom Obsidian (</code>#090a0f<code>) and Electric Emerald (</code>#00FF85<code>) design system.</td></tr><tr><td><strong>Vector Iconography</strong></td><td><strong>Lucide React</strong></td><td></code>1.31.0<code></td><td>Tree-shaken SVG vector HUD icons across all workspace views.</td></tr><tr><td><strong>Data Visualization</strong></td><td><strong>Recharts</strong></td><td></code>3.10.1<code></td><td>Interactive financial bar charts, liability exposure breakdown, and risk area charts.</td></tr><tr><td><strong>Canvas Particle Engine</strong></td><td><strong>HTML5 Canvas</strong></td><td>Native</td><td>High-performance interactive background dot-matrix visualization and coordinate crosshair overlays.</td></tr><tr><td><strong>Theme System</strong></td><td><strong>Custom Theme Context</strong></td><td>Custom</td><td>Instant zero-flicker toggle between <strong>Obsidian Dark</strong> and <strong>Clean White</strong> themes (</code>themeContext.tsx<code>).</td></tr><tr><td><strong>Micro-Interactions</strong></td><td><strong>Canvas Confetti</strong></td><td></code>1.9.4<code></td><td>Milestone and successful audit completion celebrations.</td></tr></tbody></table>
+<hr />
+<h3>2. AI Reasoning, Vision & Foundation Models</h3>
+<p>Agent One utilizes Google's latest multimodal models with autonomous prompt engineering and fallback cascades.</p>
+<table><thead><tr><th>Component</th><th>Model / Engine</th><th>Implementation</th><th>Purpose & Highlights</th></tr></thead><tbody><tr><td><strong>Primary Multimodal LLM</strong></td><td><strong>Google Gemini 2.0 Flash</strong></td><td></code>@google/generative-ai 0.24.1<code></td><td>Ultra-fast token generation, cross-modal document comprehension, and low-latency structured extraction.</td></tr><tr><td><strong>Complex Reasoning LLM</strong></td><td><strong>Google Gemini 2.0 Pro</strong></td><td>Dynamic Auto-Switch</td><td>Deep cross-clause synthesis, multi-hop legal risk discovery, and dense tabular reasoning.</td></tr><tr><td><strong>Multimodal Vision OCR</strong></td><td><strong>Gemini Vision Engine</strong></td><td>Native Base64 / Stream</td><td>High-accuracy text and table OCR on scanned receipts, physical contracts, and diagrams.</td></tr><tr><td><strong>Spatial Grounding</strong></td><td><strong>Normalized Bounding Boxes</strong></td><td></code>[x, y, w, h]<code> (0.0 to 1.0)</td><td>Maps extracted facts to exact visual coordinates on the original page, powering interactive crosshairs.</td></tr><tr><td><strong>10-Domain Intent Classifier</strong></td><td><strong>Hybrid Rule + LLM Engine</strong></td><td></code>src/lib/docClassifier.ts<code></td><td>Silently identifies 10 categories (Legal, Finance, Business, Insurance, Academic, etc.) without prompt bloat.</td></tr><tr><td><strong>Model Fallback Cascade</strong></td><td><strong>Resilient Multi-Model Failover</strong></td><td></code>src/lib/geminiClient.ts<code></td><td>Auto-failover sequence (</code>gemini-2.0-flash<code> → </code>gemini-flash-latest<code> → Pro) with 8s per-attempt timeout.</td></tr></tbody></table>
+<hr />
+<h3>3. Knowledge Graph & GraphRAG Retrieval</h3>
+<p>To eliminate blind LLM hallucinations, Agent One constructs and queries a live knowledge graph.</p>
+<table><thead><tr><th>Component</th><th>Technology</th><th>Version</th><th>Purpose & Implementation</th></tr></thead><tbody><tr><td><strong>Graph Database</strong></td><td><strong>Neo4j Aura Cloud</strong></td><td></code>neo4j-driver 6.2.0<code></td><td>Fully managed cloud graph database for cross-entity relationship modeling.</td></tr><tr><td><strong>Query Engine</strong></td><td><strong>Cypher Query Language</strong></td><td>Native Cypher</td><td>Idempotent </code>MERGE<code> transactions modeling relationships: </code>DEFINED_IN<code>, </code>CARRIES_RISK<code>, </code>DUE_ON<code>, </code>OBLIGATED_TO<code>.</td></tr><tr><td><strong>Graph Transformation</strong></td><td><strong>Graph Transformer</strong></td><td></code>src/lib/graphTransformer.ts<code></td><td>Ingests raw document analysis and converts entities/metrics into a typed node-edge graph.</td></tr><tr><td><strong>Community Detection</strong></td><td><strong>Leiden Algorithm</strong></td><td>Graph Clustering</td><td>Detects thematic document communities to expose hidden organizational risks and dependency cycles.</td></tr><tr><td><strong>Offline Graph Fallback</strong></td><td><strong>In-Memory Graph Engine</strong></td><td></code>src/lib/graphRag.ts<code></td><td>High-speed JavaScript Map/Set graph store providing 100% offline functionality if Neo4j is offline.</td></tr></tbody></table>
+<hr />
+<h3>4. Vector Search & Semantic Chunk Retrieval</h3>
+<table><thead><tr><th>Component</th><th>Technology</th><th>Specification</th><th>Implementation Detail</th></tr></thead><tbody><tr><td><strong>Vector Database</strong></td><td><strong>Qdrant Cloud</strong></td><td>REST Client API</td><td>High-scale vector similarity engine with cosine metric indexing in collection </code>docfin_documents<code>.</td></tr><tr><td><strong>Dense Embeddings</strong></td><td><strong>Sentence-Transformers</strong></td><td></code>all-MiniLM-L6-v2<code></td><td>384-dimensional dense semantic embeddings generated via HuggingFace Inference API.</td></tr><tr><td><strong>Local Vector Fallback</strong></td><td><strong>Deterministic Cosine Generator</strong></td><td>384-dim Float Vectors</td><td>Normalized local vector generation guaranteeing vector retrieval continuity during API outages.</td></tr></tbody></table>
+<hr />
+<h3>5. Model Context Protocol (MCP) Server Architecture</h3>
+<p>Agent One isolates LLM operations behind a dedicated, hardened MCP server located in </code>mcp/gemini-server<code>.</p>
+<p></code>`<code>text</p>
+<p>Boundary Guard Isolation Format:</p>
+<p><<<SYSTEM>>>      - System instructions and security policy</p>
+<p><<<SKILL>>>       - Activated domain-specific intelligence rules (e.g. legal.md, finance.md)</p>
+<p><<<USER>>>        - End-user query and conversational history</p>
+<p><<<DOCUMENT>>>    - Grounded document text, tables, and bounding boxes</p>
+<p><<<TOOL>>>        - Schema-validated MCP tool invocation payloads</p>
+<p></code>`<code></p>
+<table><thead><tr><th>MCP Tool Name</th><th>Schema Validation</th><th>Purpose</th></tr></thead><tbody><tr><td></code>gemini.analyzeMultimodal<code></td><td><strong>Zod 4.6.5</strong></td><td>Ingests document buffers/images and produces full structural analysis.</td></tr><tr><td></code>gemini.extractStructured<code></td><td><strong>Zod 4.6.5</strong></td><td>Extracts typed entities, dates, liability clauses, and numerical metrics.</td></tr><tr><td></code>gemini.reason<code></td><td><strong>Zod 4.6.5</strong></td><td>Performs multi-hop logical deductions across document sections.</td></tr><tr><td></code>gemini.answerWithEvidence<code></td><td><strong>Zod 4.6.5</strong></td><td>Answers queries with verifiable citations and spatial coordinate bounds.</td></tr><tr><td></code>gemini.compareDocuments<code></td><td><strong>Zod 4.6.5</strong></td><td>Computes semantic diff between revisions (added, removed, shifted figures).</td></tr><tr><td></code>gemini.embedText<code></td><td><strong>Zod 4.6.5</strong></td><td>Generates normalized dense embeddings for vector indexing.</td></tr></tbody></table>
+<hr />
+<h3>6. Universal Document Ingestion & Parsers</h3>
+<p>The ingestion subsystem automatically identifies MIME types and parses diverse business file formats:</p>
+<table><thead><tr><th>Format / Extension</th><th>Parsing Engine</th><th>Package</th><th>Key Output Deliverables</th></tr></thead><tbody><tr><td><strong>PDF (</code>.pdf<code>)</strong></td><td><strong></code>pdf-parse<code></strong></td><td></code>2.4.5<code></td><td>Layout preservation, page-by-page text streaming, coordinate anchor mapping.</td></tr><tr><td><strong>Word (</code>.docx<code>, </code>.doc<code>)</strong></td><td><strong></code>mammoth<code></strong></td><td></code>1.13.0<code></td><td>Hierarchical heading extraction, table cell preservation, bullet points, and raw AST.</td></tr><tr><td><strong>Markdown / Text (</code>.md<code>, </code>.txt<code>)</strong></td><td><strong>Native AST</strong></td><td>Native</td><td>Code block identification, markdown table parsing, nested section hierarchy.</td></tr><tr><td><strong>Spreadsheets (</code>.xlsx<code>, </code>.csv<code>)</strong></td><td><strong>Tabular Ingestor</strong></td><td>Native</td><td>Columnar data normalization, transaction log structuring, Recharts data binding.</td></tr><tr><td><strong>Scanned Documents (</code>.png<code>, </code>.jpg<code>, </code>.jpeg<code>)</strong></td><td><strong>Gemini Vision OCR</strong></td><td>Multimodal Flash</td><td>Pixel-level OCR, document orientation correction, spatial bounding box detection.</td></tr></tbody></table>
+<hr />
+<h3>7. Authentication, Multi-Tenancy & Persistence</h3>
+<table><thead><tr><th>Service / Tool</th><th>Library</th><th>Purpose</th></tr></thead><tbody><tr><td><strong>Supabase Cloud</strong></td><td></code>@supabase/supabase-js 2.109.0<code></td><td>Managed PostgreSQL database for audit trails, document catalogues, and storage buckets.</td></tr><tr><td><strong>Google OAuth 2.0</strong></td><td></code>@react-oauth/google 0.13.5<code></td><td>Real one-click enterprise authentication with Google Client ID & Secret verification.</td></tr><tr><td><strong>Token Verification</strong></td><td></code>jwt-decode 4.0.0<code></td><td>Client-side decoding and session expiration handling.</td></tr><tr><td><strong>Multi-Tenant Isolation</strong></td><td>Custom Middleware</td><td>Strict data boundaries ensuring users never access cross-tenant documents (10/10 automated tests pass).</td></tr></tbody></table>
+<hr />
+<h3>8. DevOps, CI/CD & Cloud Infrastructure</h3>
+<table><thead><tr><th>Infrastructure Layer</th><th>Platform / Tool</th><th>Configuration Details</th></tr></thead><tbody><tr><td><strong>Production Hosting</strong></td><td><strong>Vercel Edge Global CDN</strong></td><td>Serverless Next.js deployment at <a href="https://agent-one-rosy.vercel.app/">https://agent-one-rosy.vercel.app/</a>.</td></tr><tr><td><strong>Automated CI/CD</strong></td><td><strong>GitHub Webhook Integration</strong></td><td>Zero-downtime automated deployment triggered instantly on every </code>git push origin main<code>.</td></tr><tr><td><strong>Containerization</strong></td><td><strong>Docker</strong></td><td>Multi-stage production </code>Dockerfile<code> with lightweight Alpine Node.js runtime and </code>docker-compose.yml<code>.</td></tr><tr><td><strong>Package Management</strong></td><td><strong>npm</strong></td><td>Deterministic dependency tree locked via </code>package-lock.json<code>.</td></tr><tr><td><strong>Testing Harness</strong></td><td><strong>Custom Test Suite</strong></td><td>7-stage automated verification (</code>scripts/test-runner.mjs<code>) covering types, lint, pipeline, isolation, and builds.</td></tr></tbody></table>
+<hr />
+<h2>📋 Environment Variables Reference Matrix</h2>
+<p>All 13 environment variables configured for production on Vercel:</p>
+<table><thead><tr><th>Variable Name</th><th>Environment</th><th>Sensitivity</th><th>Fallback Strategy</th><th>Purpose</th></tr></thead><tbody><tr><td></code>GEMINI_API_KEY<code></td><td>Production / Local</td><td><strong>Secret</strong></td><td>Required</td><td>Google Gemini 2.0 Flash/Pro inference, OCR, and reasoning.</td></tr><tr><td></code>GRAPH_RAG_ENABLED<code></td><td>Production / Local</td><td>Config</td><td>Defaults to </code>true<code></td><td>Enables Neo4j knowledge graph integration.</td></tr><tr><td></code>NEO4J_URI<code></td><td>Production / Local</td><td>Config</td><td>In-Memory Graph</td><td>Bolt/Neo4j+s endpoint URL for Neo4j Aura cloud instance.</td></tr><tr><td></code>NEO4J_USERNAME<code></td><td>Production / Local</td><td>Config</td><td>In-Memory Graph</td><td>Database user authentication credential.</td></tr><tr><td></code>NEO4J_PASSWORD<code></td><td>Production / Local</td><td><strong>Secret</strong></td><td>In-Memory Graph</td><td>Secure password for Neo4j database authentication.</td></tr><tr><td></code>QDRANT_URL<code></td><td>Production / Local</td><td>Config</td><td>In-Memory Vectors</td><td>REST endpoint for Qdrant Cloud cluster.</td></tr><tr><td></code>QDRANT_API_KEY<code></td><td>Production / Local</td><td><strong>Secret</strong></td><td>In-Memory Vectors</td><td>API key for authenticated Qdrant operations.</td></tr><tr><td></code>NEXT_PUBLIC_SUPABASE_URL<code></td><td>Production / Local</td><td>Public Config</td><td>In-Memory Store</td><td>Supabase project REST and API gateway URL.</td></tr><tr><td></code>NEXT_PUBLIC_SUPABASE_ANON_KEY<code></td><td>Production / Local</td><td>Public Key</td><td>In-Memory Store</td><td>Supabase public client anonymous authentication key.</td></tr><tr><td></code>SUPABASE_SERVICE_ROLE_KEY<code></td><td>Production / Local</td><td><strong>Secret</strong></td><td>In-Memory Store</td><td>Privileged Supabase backend administrative access key.</td></tr><tr><td></code>NEXT_PUBLIC_SUPABASE_BUCKET_NAME<code></td><td>Production / Local</td><td>Public Config</td><td>Defaults </code>documents<code></td><td>Storage bucket name for uploaded raw files.</td></tr><tr><td></code>NEXT_PUBLIC_GOOGLE_CLIENT_ID<code></td><td>Production / Local</td><td>Public Config</td><td>Mock Auth</td><td>Google OAuth 2.0 Web Client identifier.</td></tr><tr><td></code>GOOGLE_CLIENT_SECRET<code></td><td>Production / Local</td><td><strong>Secret</strong></td><td>Mock Auth</td><td>Google OAuth 2.0 backend server secret.</td></tr></tbody></table>
+<hr />
+<h2>🧪 Verification & Audit Commands</h2>
+<p>To verify the entire tech stack locally:</p>
+<p></code>`<code>bash</p>
+<h1>1. Full 7-stage automated production verification</h1>
+<p>npm test</p>
+<h1>2. TypeScript compilation type-check</h1>
+<p>npx tsc --noEmit</p>
+<h1>3. Universal ingestion pipeline test</h1>
+<p>npx tsx scripts/test-universal-pipeline.mjs</p>
+<h1>4. Multi-tenant user data isolation test (10/10 passing)</h1>
+<p>node scripts/test-user-isolation.mjs</p>
+<h1>5. Production Next.js Turbopack build</h1>
+<p>npm run build</p>
+<p></code>``</p>
+<hr />
+<p><em>Authored by the Agent One Engineering Team: B. Pranay Kumar, A. Sai Athej Reddy, B. Manikanta, B. Bharath.</em></p>
+<p><em>Institution: KG Reddy College of Engineering & Technology (KGRCET), Hyderabad (JNTUH)</em></p>
+</body>
+</html>
